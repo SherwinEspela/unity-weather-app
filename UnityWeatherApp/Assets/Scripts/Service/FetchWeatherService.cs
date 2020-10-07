@@ -6,19 +6,25 @@ public class FetchWeatherService : MonoBehaviour
 {
     // Constants
     private const string BASE_URL = "https://api.openweathermap.org/data/2.5/";
-    private const string API_KEY = "570aef4778feaeaaf782b6fefa9ae4b0"; // "b1085d332366b974aff32c0294e1aef6"; 
+    private const string API_KEY = "570aef4778feaeaaf782b6fefa9ae4b0";
 
     void Start()
     {
-        FetchData("Surrey");
+        //FetchCurrentWeatherData("Surrey");
+        FetchWeatherForecastData("Vancouver");
     }
 
-    public void FetchData(string cityName)
+    public void FetchCurrentWeatherData(string cityName)
     {
-        StartCoroutine(ProcessRequest(cityName));
+        StartCoroutine(ProcessFetchCurrentWeatherRequest(cityName));
     }
 
-    private IEnumerator ProcessRequest(string cityName)
+    public void FetchWeatherForecastData(string cityName)
+    {
+        StartCoroutine(ProcessFetchForecastWeatherRequest(cityName));
+    }
+
+    private IEnumerator ProcessFetchCurrentWeatherRequest(string cityName)
     {
         var url = $"{BASE_URL}weather?q={cityName}&appid={API_KEY}";
         var request = UnityWebRequest.Get(url);
@@ -30,20 +36,30 @@ public class FetchWeatherService : MonoBehaviour
         }
         else
         {
-            Debug.Log(request.downloadHandler.text);
+            var currentWeather = WeatherModel.CreateFromJSON(request.downloadHandler.text);
+            Debug.Log($"current weather ==== {currentWeather.weather[0].description}, {currentWeather.sys.country}");
         }
+    }
 
-        var urlForecast = $"{BASE_URL}forecast?q={cityName}&appid={API_KEY}";
-        var requestForecast = UnityWebRequest.Get(urlForecast);
+    private IEnumerator ProcessFetchForecastWeatherRequest(string cityName)
+    {
+        var url = $"{BASE_URL}forecast?q={cityName}&appid={API_KEY}";
+        var request = UnityWebRequest.Get(url);
 
-        yield return requestForecast.SendWebRequest();
-        if (requestForecast.isNetworkError)
+        yield return request.SendWebRequest();
+        if (request.isNetworkError)
         {
-            Debug.Log(requestForecast.error);
+            Debug.Log(request.error);
         }
         else
         {
-            Debug.Log(requestForecast.downloadHandler.text);
+            var weatherForecast = WeatherForecastModel.CreateFromJSON(request.downloadHandler.text);
+            Debug.Log($"current weather ==== {weatherForecast.message}, {weatherForecast.city.name}");
+
+            foreach (var item in weatherForecast.list)
+            {
+                Debug.Log($"{item.dt_txt} : {item.name} {item.weather[0].description} {item.main.temp}");
+            }
         }
     }
 }
