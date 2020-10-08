@@ -8,6 +8,7 @@ public class CurrentWeatherViewModel : MonoBehaviour
 
     // Properties
     public string City { get; set; }
+    public string MainDescription { get; set; }
     public string Description { get; set; }
     public string Temperature { get; set; }
 
@@ -19,6 +20,7 @@ public class CurrentWeatherViewModel : MonoBehaviour
         var coordinates = locationService.GetCoordinates();
         weatherService.FetchCurrentWeatherData(coordinates.Latitude, coordinates.Longitude, (weatherData) => {
             this.City = weatherData.name;
+            this.MainDescription = weatherData.weather[0].main;
             this.Description = weatherData.weather[0].description;
             this.Temperature = $"{weatherData.main.temp.ToString()}°C";
             OnCurrentWeatherDataFetched();

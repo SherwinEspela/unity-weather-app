@@ -52,6 +52,7 @@ public class FetchLocationService : MonoBehaviour
     }
 }
 
+
 public struct CoordinatesModel
 {
     public double Latitude { get; set; }

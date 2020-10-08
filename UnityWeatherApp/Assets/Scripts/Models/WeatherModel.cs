@@ -8,6 +8,7 @@ public class WeatherModel
     public MainDataModel main;
     public SysDataModel sys;
 
+    public int dt;
     public int id;
     public string name;
     public int cod;
