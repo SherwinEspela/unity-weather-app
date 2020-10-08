@@ -10,7 +10,6 @@ public class CurrentWeatherVC : MonoBehaviour
     [SerializeField] Text textDescription;
     [SerializeField] Text textTemperature;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentWeatherVM.GetData();
