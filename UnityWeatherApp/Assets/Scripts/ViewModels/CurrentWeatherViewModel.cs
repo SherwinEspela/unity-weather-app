@@ -27,9 +27,22 @@ public class CurrentWeatherViewModel : MonoBehaviour
 
     public void GetData()
     {
-        var coordinates = locationService.GetCoordinates();
-        weatherService.FetchCurrentWeatherData(coordinates.lon, coordinates.lat, (weatherData) => {
+#if UNITY_EDITOR
+        // Unity Editor
+        var coordinates = locationService.GetTestCoordinates();
+        PerformDataFetching(coordinates);
+#else
+        // other platforms
+        locationService.GetCurrentUserLocation((coords) =>
+        {
+            PerformDataFetching(coords);
+        });
+#endif
+    }
 
+    private void PerformDataFetching(CoordinatesModel coordinates)
+    {
+        weatherService.FetchCurrentWeatherData(coordinates.lon, coordinates.lat, (weatherData) => {
             var weather = weatherData.weather[0];
             this.City = weatherData.name;
             this.MainDescription = weather.main;

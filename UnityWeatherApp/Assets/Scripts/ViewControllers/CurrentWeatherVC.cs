@@ -52,6 +52,8 @@ public class CurrentWeatherVC : MonoBehaviour
         textWindDegree.text = $"Wind Degree: {currentWeatherVM.WindDegree}";
         textCountry.text = $"Country: {currentWeatherVM.Country}";
 
+        //current weather ====== { "coord":{ "lon":-122.69,"lat":49.12},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":13.81,"feels_like":13.14,"temp_min":12.78,"temp_max":14.44,"pressure":1008,"humidity":82},"visibility":10000,"wind":{"speed":1.33,"deg":128},"clouds":{"all":86},"dt":1602218504,"sys":{"type":3,"id":2008532,"country":"CA","sunrise":1602166896,"sunset":1602207260},"timezone":-25200,"id":5924204,"name":"Cloverdale","cod":200}
+
         var service = FindObjectOfType<FetchWeatherService>();
         service.FetchWeatherIcon(currentWeatherVM.IconType, (iconSprite) =>
         {

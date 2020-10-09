@@ -1,16 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class FetchLocationService : MonoBehaviour
 {
-    public CoordinatesModel GetCoordinates()
+    public CoordinatesModel GetTestCoordinates()
     {
-        var coordinates = new CoordinatesModel() { lon = 49.124663, lat = -122.685091 };
+        // Coordinates from a Vancouver location to test in Editor
+        var coordinates = new CoordinatesModel() { lat = -122.685091f, lon = 49.124663f };
         return coordinates;
     }
 
-    public IEnumerator GetCurrentLocation()
+    public void GetCurrentUserLocation(Action<CoordinatesModel> onCoordinateRetrievedhandler)
+    {
+        StartCoroutine(ProcessGetCurrentUserLocation(onCoordinateRetrievedhandler));
+    }
+
+    private IEnumerator ProcessGetCurrentUserLocation(Action<CoordinatesModel> onCoordinateRetrievedhandler)
     {
         if (!Input.location.isEnabledByUser)
         {
@@ -31,23 +37,26 @@ public class FetchLocationService : MonoBehaviour
         // Service didn't initialize in 20 seconds
         if (maxWait < 1)
         {
-            print("Timed out");
+            // Timed out
             yield break;
         }
 
         // Connection has failed
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            print("Unable to determine device location");
+            // Unable to determine device location
             yield break;
         }
-        else
-        {
-            // Access granted and location value could be retrieved
-            print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-        }
 
-        // Stop service if there is no need to query location updates continuously
+        // Access granted and location value could be retrieved
+        onCoordinateRetrievedhandler(new CoordinatesModel()
+        {
+            lat = Input.location.lastData.latitude,
+            lon = Input.location.lastData.longitude
+        });
+
+        // Stop service if there is no need to
+        // query location updates continuously
         Input.location.Stop();
     }
 }

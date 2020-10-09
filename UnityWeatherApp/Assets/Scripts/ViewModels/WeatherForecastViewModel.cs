@@ -16,15 +16,30 @@ public class WeatherForecastViewModel : MonoBehaviour
 
     public void GetData()
     {
-        var coordinates = locationService.GetCoordinates();
-  
+#if UNITY_EDITOR
+        // Unity Editor
+        var coordinates = locationService.GetTestCoordinates();
+        PerformDataFetching(coordinates);
+#else
+        // other platform
+        locationService.GetCurrentUserLocation((coords) =>
+        {
+            PerformDataFetching(coords);
+        });        
+#endif
+
+    }
+
+    private void PerformDataFetching(CoordinatesModel coordinates)
+    {
         weatherService.FetchWeatherForecastData(coordinates.lon, coordinates.lat, (forecastData) => {
             this.DailyForecastList = new List<DailyForecastCellVM>();
 
             var weatherModels = forecastData.list;
             foreach (WeatherModel item in weatherModels)
             {
-                var dailyForecastCellVM = new DailyForecastCellVM() {
+                var dailyForecastCellVM = new DailyForecastCellVM()
+                {
                     Day = GetDayOfWeek(item.dt_txt),
                     Time = GetDateAndTime(item.dt_txt),
                     Description = item.weather[0].description,

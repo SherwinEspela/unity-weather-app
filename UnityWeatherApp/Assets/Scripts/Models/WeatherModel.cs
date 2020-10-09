@@ -25,15 +25,15 @@ public class WeatherModel
 [Serializable]
 public struct CoordinatesModel
 {
-    public double lon { get; set; }
-    public double lat { get; set; }
+    public float lon;
+    public float lat;
 }
 
 [Serializable]
 public struct WindDataModel
 {
-    public double speed { get; set; }
-    public int deg { get; set; }
+    public float speed;
+    public int deg;
 }
 
 [Serializable]
