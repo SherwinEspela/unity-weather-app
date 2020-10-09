@@ -59,9 +59,4 @@ public class CurrentWeatherVC : MonoBehaviour
             imageIcon.gameObject.SetActive(true);
         });
     }
-
-    public void ZZZZZZZZZZZZZZ(bool isActive)
-    {
-        this.gameObject.SetActive(isActive);
-    }
 }
