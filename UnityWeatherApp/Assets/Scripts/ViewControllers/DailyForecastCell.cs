@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DailyForecastCell : MonoBehaviour
@@ -21,6 +22,14 @@ public class DailyForecastCell : MonoBehaviour
             textTempMax.text = dailyForecastVM.TemperatureMax;
             textPressure.text = dailyForecastVM.Pressure;
             textHumidity.text = dailyForecastVM.Humidity;
+
+            var service = FindObjectOfType<FetchWeatherService>();
+            service.FetchWeatherIcon(dailyForecastVM.IconType, (texture) =>
+            {
+                var iconSprite = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), Vector2.zero);
+                imageIcon.sprite = iconSprite;
+                imageIcon.gameObject.SetActive(true);
+            });
         }
     }
 
@@ -33,4 +42,5 @@ public class DailyForecastCell : MonoBehaviour
     [SerializeField] TextMeshProUGUI textTempMax;
     [SerializeField] TextMeshProUGUI textPressure;
     [SerializeField] TextMeshProUGUI textHumidity;
+    [SerializeField] Image imageIcon;
 }

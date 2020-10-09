@@ -20,6 +20,11 @@ public class FetchWeatherService : MonoBehaviour
         StartCoroutine(ProcessWeatherForecastRequest(latitude, longitude, requestHandler));
     }
 
+    public void FetchWeatherIcon(string icon, Action<Texture2D> requestHandler)
+    {
+        StartCoroutine(DownloadIconImage(icon, requestHandler));
+    }
+
     private IEnumerator ProcessFetchCurrentWeatherRequest(double latitude, double longitude, Action<WeatherModel> requestHandler)
     {
         var url = $"{BASE_URL}weather?lat={latitude}&lon={longitude}&units={UNIT}&appid={API_KEY}";
@@ -51,6 +56,22 @@ public class FetchWeatherService : MonoBehaviour
         {
             var weatherForecast = WeatherForecastModel.CreateFromJSON(request.downloadHandler.text);
             requestHandler(weatherForecast);
+        }
+    }
+
+    private static IEnumerator DownloadIconImage(string icon, Action<Texture2D> requestHandler)
+    {
+        var url = string.Format("http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        var request = UnityWebRequestTexture.GetTexture(url);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+        {
+            Debug.Log(request.error);
+        }
+        else
+        {
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            requestHandler(texture);
         }
     }
 }

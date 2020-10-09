@@ -28,11 +28,12 @@ public class WeatherForecastViewModel : MonoBehaviour
                     Day = GetDayOfWeek(item.dt_txt),
                     Time = GetDateAndTime(item.dt_txt),
                     Description = item.weather[0].description,
-                    Temperature = item.main.temp.ToString(),
-                    TemperatureMin = item.main.temp_min.ToString(),
-                    TemperatureMax = item.main.temp_max.ToString(),
+                    Temperature = $"{Mathf.FloorToInt(item.main.temp)}°C",
+                    TemperatureMin = $"{Mathf.FloorToInt(item.main.temp_min)}°C",
+                    TemperatureMax = $"{Mathf.FloorToInt(item.main.temp_max)}°C",
                     Pressure = item.main.pressure.ToString(),
-                    Humidity = item.main.humidity.ToString()
+                    Humidity = item.main.humidity.ToString(),
+                    IconType = item.weather[0].icon
                 };
 
                 this.DailyForecastList.Add(dailyForecastCellVM);
@@ -55,6 +56,4 @@ public class WeatherForecastViewModel : MonoBehaviour
                           System.Globalization.CultureInfo.InvariantCulture);
         return $"{date.Month}/{date.Day} {date.ToShortTimeString()}";
     }
-
-    //{"dt":1602568800,"main":{"temp":8.1,"feels_like":5.94,"temp_min":8.1,"temp_max":8.1,"pressure":1019,"sea_level":1019,"grnd_level":1012,"humidity":85,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"clouds":{"all":73},"wind":{"speed":1.7,"deg":83},"visibility":10000,"pop":0.05,"sys":{"pod":"n"},"dt_txt":"2020-10-13 06:00:00"}
 }
