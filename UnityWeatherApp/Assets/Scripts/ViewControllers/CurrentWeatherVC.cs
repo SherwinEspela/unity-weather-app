@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CurrentWeatherVC : MonoBehaviour
 {
     [SerializeField] CurrentWeatherViewModel currentWeatherVM;
     [SerializeField] EnvironmentManager environmentManager;
-    [SerializeField] Text textCity;
+    [SerializeField] TextMeshProUGUI textCity;
     [SerializeField] Text textDescription;
-    [SerializeField] Text textTemperature;
+    [SerializeField] TextMeshProUGUI textTemperature;
     [SerializeField] Image imageIcon;
     [SerializeField] Text textPressure;
     [SerializeField] Text textHumidity;
