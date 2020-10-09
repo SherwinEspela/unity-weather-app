@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.26415092, g: 0.21281593, b: 0.21281593, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 674fd7a44dab3dd4b8f5e1adffe5bc59, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1d150997cff554bfd885e60296e9fd2b, type: 2}
   m_HaloStrength: 0.374
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2754,7 +2754,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59552a96af6554e45a2e2e2d61727a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  materialClear: {fileID: 2100000, guid: 1d150997cff554bfd885e60296e9fd2b, type: 2}
+  materialClouds: {fileID: 2100000, guid: 674fd7a44dab3dd4b8f5e1adffe5bc59, type: 2}
+  materialDrizzle: {fileID: 2100000, guid: 4cf5681f122e643fb9498681453cb1a0, type: 2}
+  materialRain: {fileID: 2100000, guid: e03eb7fedfa27469bb0b9a81b39d862d, type: 2}
+  materialSnow: {fileID: 2100000, guid: 53690dde5b1b24061805f46157c4e6a6, type: 2}
+  materialThunderstorm: {fileID: 2100000, guid: 0b1bd8005a32c4304b472fa76641b70f, type: 2}
+  scrollSpeed: 1
 --- !u!1 &1206329879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,6 +3904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeatherVM: {fileID: 1293931499}
+  environmentManager: {fileID: 1170857679}
   textCity: {fileID: 1389123551}
   textDescription: {fileID: 261510421}
   textTemperature: {fileID: 761109668}

@@ -19,18 +19,18 @@ public class WeatherForecastViewModel : MonoBehaviour
 #if UNITY_EDITOR
         // Unity Editor
         var coordinates = locationService.GetTestCoordinates();
-        PerformDataFetching(coordinates);
+        MapToProperties(coordinates);
 #else
         // other platform
         locationService.GetCurrentUserLocation((coords) =>
         {
-            PerformDataFetching(coords);
+            MapToProperties(coords);
         });        
 #endif
 
     }
 
-    private void PerformDataFetching(CoordinatesModel coordinates)
+    private void MapToProperties(CoordinatesModel coordinates)
     {
         weatherService.FetchWeatherForecastData(coordinates.lon, coordinates.lat, (forecastData) => {
             this.DailyForecastList = new List<DailyForecastCellVM>();

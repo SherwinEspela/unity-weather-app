@@ -30,17 +30,17 @@ public class CurrentWeatherViewModel : MonoBehaviour
 #if UNITY_EDITOR
         // Unity Editor
         var coordinates = locationService.GetTestCoordinates();
-        PerformDataFetching(coordinates);
+        MapToProperties(coordinates);
 #else
         // other platforms
         locationService.GetCurrentUserLocation((coords) =>
         {
-            PerformDataFetching(coords);
+            MapToProperties(coords);
         });
 #endif
     }
 
-    private void PerformDataFetching(CoordinatesModel coordinates)
+    private void MapToProperties(CoordinatesModel coordinates)
     {
         weatherService.FetchCurrentWeatherData(coordinates.lon, coordinates.lat, (weatherData) => {
             var weather = weatherData.weather[0];
@@ -58,6 +58,7 @@ public class CurrentWeatherViewModel : MonoBehaviour
             this.WindSpeed = weatherData.wind.speed.ToString();
             this.WindDegree = weatherData.wind.deg.ToString();
             this.Country = weatherData.sys.country;
+            this.MainDescription = weather.main;
 
             OnCurrentWeatherDataFetched();
         });

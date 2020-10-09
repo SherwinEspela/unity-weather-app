@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CurrentWeatherVC : MonoBehaviour
 {
     [SerializeField] CurrentWeatherViewModel currentWeatherVM;
+    [SerializeField] EnvironmentManager environmentManager;
     [SerializeField] Text textCity;
     [SerializeField] Text textDescription;
     [SerializeField] Text textTemperature;
@@ -51,6 +52,7 @@ public class CurrentWeatherVC : MonoBehaviour
         textWindSpeed.text = $"Wind Speed: {currentWeatherVM.WindSpeed}";
         textWindDegree.text = $"Wind Degree: {currentWeatherVM.WindDegree}";
         textCountry.text = $"Country: {currentWeatherVM.Country}";
+        environmentManager.SetBackground(currentWeatherVM.MainDescription);
 
         var service = FindObjectOfType<FetchWeatherService>();
         service.FetchWeatherIcon(currentWeatherVM.IconType, (iconSprite) =>
