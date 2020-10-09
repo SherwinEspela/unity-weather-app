@@ -24,9 +24,8 @@ public class DailyForecastCell : MonoBehaviour
             textHumidity.text = dailyForecastVM.Humidity;
 
             var service = FindObjectOfType<FetchWeatherService>();
-            service.FetchWeatherIcon(dailyForecastVM.IconType, (texture) =>
+            service.FetchWeatherIcon(dailyForecastVM.IconType, (iconSprite) =>
             {
-                var iconSprite = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), Vector2.zero);
                 imageIcon.sprite = iconSprite;
                 imageIcon.gameObject.SetActive(true);
             });

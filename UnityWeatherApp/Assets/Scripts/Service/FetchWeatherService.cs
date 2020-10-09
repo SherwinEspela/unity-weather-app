@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
@@ -20,7 +21,7 @@ public class FetchWeatherService : MonoBehaviour
         StartCoroutine(ProcessWeatherForecastRequest(latitude, longitude, requestHandler));
     }
 
-    public void FetchWeatherIcon(string icon, Action<Texture2D> requestHandler)
+    public void FetchWeatherIcon(string icon, Action<Sprite> requestHandler)
     {
         StartCoroutine(DownloadIconImage(icon, requestHandler));
     }
@@ -59,7 +60,7 @@ public class FetchWeatherService : MonoBehaviour
         }
     }
 
-    private static IEnumerator DownloadIconImage(string icon, Action<Texture2D> requestHandler)
+    private static IEnumerator DownloadIconImage(string icon, Action<Sprite> requestHandler)
     {
         var url = string.Format("http://openweathermap.org/img/wn/" + icon + "@2x.png");
         var request = UnityWebRequestTexture.GetTexture(url);
@@ -71,7 +72,8 @@ public class FetchWeatherService : MonoBehaviour
         else
         {
             var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            requestHandler(texture);
+            var iconSprite = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), Vector2.zero);
+            requestHandler(iconSprite);
         }
     }
 }

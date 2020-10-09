@@ -6,7 +6,7 @@ public class FetchLocationService : MonoBehaviour
 {
     public CoordinatesModel GetCoordinates()
     {
-        var coordinates = new CoordinatesModel() { Latitude = 49.124663, Longitude = -122.685091 };
+        var coordinates = new CoordinatesModel() { lon = 49.124663, lat = -122.685091 };
         return coordinates;
     }
 
@@ -52,9 +52,3 @@ public class FetchLocationService : MonoBehaviour
     }
 }
 
-
-public struct CoordinatesModel
-{
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
-}

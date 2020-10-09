@@ -18,7 +18,7 @@ public class WeatherForecastViewModel : MonoBehaviour
     {
         var coordinates = locationService.GetCoordinates();
   
-        weatherService.FetchWeatherForecastData(coordinates.Latitude, coordinates.Longitude, (forecastData) => {
+        weatherService.FetchWeatherForecastData(coordinates.lon, coordinates.lat, (forecastData) => {
             this.DailyForecastList = new List<DailyForecastCellVM>();
 
             var weatherModels = forecastData.list;

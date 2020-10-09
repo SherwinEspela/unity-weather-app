@@ -4,9 +4,11 @@ using System;
 [Serializable]
 public class WeatherModel
 {
+    public CoordinatesModel coord;
     public WeatherDataModel[] weather;
     public MainDataModel main;
     public SysDataModel sys;
+    public WindDataModel wind;
 
     public int dt;
     public int id;
@@ -18,6 +20,20 @@ public class WeatherModel
     {
         return JsonUtility.FromJson<WeatherModel>(jsonString);
     }
+}
+
+[Serializable]
+public struct CoordinatesModel
+{
+    public double lon { get; set; }
+    public double lat { get; set; }
+}
+
+[Serializable]
+public struct WindDataModel
+{
+    public double speed { get; set; }
+    public int deg { get; set; }
 }
 
 [Serializable]
