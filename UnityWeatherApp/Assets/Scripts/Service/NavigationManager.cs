@@ -25,14 +25,12 @@ public class NavigationManager : MonoBehaviour
 
     public void DisplayWeatherForecastScreen()
     {
-        // weatherForecastVC.gameObject.SetActive(true);
         animatorCurrentWeatherScreen.SetTrigger(TRIGGER_FADEOUT);
         animatorWeatherForecastScreen.SetTrigger(TRIGGER_FADEIN);
     }
 
     public void DisplayCurrentWeatherScreen()
     {
-        // currentWeatherVC.gameObject.SetActive(true);
         animatorWeatherForecastScreen.SetTrigger(TRIGGER_FADEOUT);
         animatorCurrentWeatherScreen.SetTrigger(TRIGGER_FADEIN);
     }
