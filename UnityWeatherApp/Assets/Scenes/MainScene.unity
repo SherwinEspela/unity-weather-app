@@ -193,7 +193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122959052
@@ -845,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375083696
@@ -1076,7 +1076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476682142
@@ -1343,7 +1343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546491714
@@ -2055,7 +2055,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 3383.742}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1013828172
 MonoBehaviour:
@@ -2131,7 +2131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033099164
@@ -2363,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101355771
@@ -2442,7 +2442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130728032
@@ -2521,7 +2521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152493513
@@ -2683,7 +2683,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170857675}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1170857677
 Camera:
   m_ObjectHideFlags: 0
@@ -2693,7 +2693,7 @@ Camera:
   m_GameObject: {fileID: 1170857675}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -2709,8 +2709,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 15.8
-  orthographic: 1
+  field of view: 20
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -2734,13 +2734,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170857675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.02439036, y: -0, z: -0, w: 0.9997025}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.795, y: 0, z: 0}
 --- !u!1 &1206329879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,13 +3675,15 @@ GameObject:
   - component: {fileID: 1626686343}
   - component: {fileID: 1626686342}
   - component: {fileID: 1626686344}
+  - component: {fileID: 1626686345}
+  - component: {fileID: 1626686346}
   m_Layer: 5
   m_Name: PanelWeatherForecast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1626686341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3710,7 +3712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626686340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3756,6 +3758,37 @@ MonoBehaviour:
   weatherForecastVM: {fileID: 1293931501}
   dailyForecastCellPrefab: {fileID: 8704535647650079162, guid: bea854a23e4f8a644904f23112495425, type: 3}
   tableView: {fileID: 1013828171}
+--- !u!225 &1626686345
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626686340}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1626686346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626686340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37f275533630f8440a2aebbc9f3502c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1639005975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3802,8 @@ GameObject:
   - component: {fileID: 1639005977}
   - component: {fileID: 1639005979}
   - component: {fileID: 1639005980}
+  - component: {fileID: 1639005982}
+  - component: {fileID: 1639005981}
   m_Layer: 5
   m_Name: PanelCurrentWeather
   m_TagString: Untagged
@@ -3805,7 +3840,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639005975}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3888,6 +3923,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &1639005981
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639005975}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1639005982
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639005975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cecc0b58a0fc41447a35f38b12bb8ac4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1685121420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,7 +4064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.754862, y: 0}
+  m_AnchoredPosition: {x: 8.754883, y: 0}
   m_SizeDelta: {x: -17.510277, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717877539

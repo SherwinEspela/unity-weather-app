@@ -4,10 +4,13 @@ using System;
 
 public class FetchLocationService : MonoBehaviour
 {
+    // Coordinates from a Vancouver location to test in Editor
+    private const float TEST_LATITUDE = -123.1189449f;
+    private const float TEST_LONGITUDE = 49.284244f;
+
     public CoordinatesModel GetTestCoordinates()
     {
-        // Coordinates from a Vancouver location to test in Editor
-        var coordinates = new CoordinatesModel() { lat = -122.685091f, lon = 49.124663f };
+        var coordinates = new CoordinatesModel() { lat = TEST_LATITUDE, lon = TEST_LONGITUDE };
         return coordinates;
     }
 
